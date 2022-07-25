@@ -8,7 +8,6 @@ export namespace BytesSignature {
     /**
      * Prefix and Sign a binary payload using the given Ethers wallet or signer.
      * @param messageBytes
-     * @param chainId The ID of the Vocdoni blockchain deployment for which the message is intended to
      * @param walletOrSigner
      */
     export function signMessage(messageBytes: Uint8Array, walletOrSigner: Wallet | Signer): Promise<string> {
