@@ -6,7 +6,7 @@ export namespace BytesSignature {
     // MESSAGES
 
     /**
-     * Prefix and Sign a binary payload using the given Ethers wallet or signer.
+     * Signs a message after adding the prefix "Vocdoni signed message\n".
      * @param messageBytes
      * @param walletOrSigner
      */
@@ -18,7 +18,7 @@ export namespace BytesSignature {
     }
 
     /**
-     * Checks whether the given public key signed the given message
+     * Checks whether the given public key signed the given Vocdoni-prefixed message
      * @param signature Hex encoded signature (created with the Ethereum prefix)
      * @param publicKey
      * @param messageBytes Uint8Array of the message
@@ -32,7 +32,7 @@ export namespace BytesSignature {
     }
 
     /**
-     * Returns the public key that signed the given message
+     * Returns the public key that signed the given Vocdoni-prefixed message
      *
      * @param messageBytes The payload being signed
      * @param signature Hex encoded signature (created with the Ethereum prefix)
@@ -50,7 +50,7 @@ export namespace BytesSignature {
     // TRANSACTIONS
 
     /**
-     * Prefix and Sign a binary payload using the given Ethers wallet or signer.
+     * Sign a binary payload with the "Vocdoni signed transaction:\nchainID\n" prefix
      * @param messageBytes
      * @param chainId The ID of the Vocdoni blockchain deployment for which the message is intended to
      * @param walletOrSigner
@@ -63,7 +63,7 @@ export namespace BytesSignature {
     }
 
     /**
-     * Checks whether the given public key signed the given transaction
+     * Checks whether the given public key signed the given Vocdoni-prefixed transaction
      * @param signature Hex encoded signature (created with the Ethereum prefix)
      * @param publicKey
      * @param messageBytes Uint8Array of the message
@@ -78,7 +78,7 @@ export namespace BytesSignature {
     }
 
     /**
-     * Returns the public key that signed the given transaction
+     * Returns the public key that signed the given Vocdoni-prefixed transaction
      *
      * @param messageBytes The payload being signed
      * @param signature Hex encoded signature (created with the Ethereum prefix)
