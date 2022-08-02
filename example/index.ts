@@ -625,7 +625,7 @@ async function checkSignature() {
     // const expectedAddress = "0xe3A0ba4B2Ec804869d9D78857C5c4c6aA493aD00"
     // const body = { "method": "getVisibility", "timestamp": Date.now()}
     //const message = JSON.stringify(body)
-    //const signature = await JsonSignature.signMessage(body, wallet)
+    //const signature = await JsonSignature.signVocdoniMessage(body, wallet)
 
     const expectedAddress = await wallet.getAddress()
     const expectedPublicKey = utils.computePublicKey(wallet.publicKey, true)
@@ -638,7 +638,7 @@ async function checkSignature() {
 
     const message = JSON.stringify(body)
 
-    const computedSignature = await JsonSignature.signMessage(body, wallet)
+    const computedSignature = await JsonSignature.signVocdoniMessage(body, wallet)
 
     console.log("Issuing signature\n")
     console.log("- ADDR:        ", expectedAddress)

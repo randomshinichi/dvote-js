@@ -14,13 +14,13 @@ export namespace JsonSignature {
      * @param message JSON object of the `response` or `error` fields
      * @param walletOrSigner
      */
-    export function signMessage(message: JsonLike, walletOrSigner: Wallet | Signer): Promise<string> {
+    export function signVocdoniMessage(message: JsonLike, walletOrSigner: Wallet | Signer): Promise<string> {
         if (!walletOrSigner) throw new Error("Invalid wallet/signer")
 
         const strMessage = normalizedJsonString(message)
         const msgBytes = new TextEncoder().encode(strMessage)
 
-        return BytesSignature.signMessage(msgBytes, walletOrSigner)
+        return BytesSignature.signVocdoniMessage(msgBytes, walletOrSigner)
     }
 
     /**

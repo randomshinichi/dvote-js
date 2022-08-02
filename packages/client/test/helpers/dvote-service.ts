@@ -96,7 +96,7 @@ export class DevGatewayService {
                 signature: ""
             }
             const responseBytes = new TextEncoder().encode(JSON.stringify(response))
-            responseData.signature = await BytesSignature.signMessage(responseBytes, this.wallet)
+            responseData.signature = await BytesSignature.signVocdoniMessage(responseBytes, this.wallet)
             this.interactionCount++
             res.send(responseData)
         }

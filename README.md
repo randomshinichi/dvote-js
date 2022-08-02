@@ -101,7 +101,7 @@ const hexSeed = "0xfdbc446f9f3ea732d23c7bcd10c784d041887d48ebc392c4ff51882ae569c
 const passphrase = "A very Difficult 1234 passphrase" // must be private and include upper/lowercase chars and numbers
 
 const wallet = WalletUtil.fromSeededPassphrase(passphrase, hexSeed, provider)
-wallet.signMessage(...)
+wallet.signVocdoniMessage(...)
 // ...
 ```
 </details>

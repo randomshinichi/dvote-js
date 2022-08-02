@@ -18,7 +18,7 @@ npm install @vocdoni/wallets
 import { SignerUtil } from "@vocdoni/wallets"
 
 const signer = SignerUtil.fromInjectedWeb3()
-// wallet.signMessage(...)
+// wallet.signVocdoniMessage(...)
 
 // See ethers.js > Signer
 ```
@@ -29,7 +29,7 @@ const signer = SignerUtil.fromInjectedWeb3()
 import { WalletUtil } from "@vocdoni/wallets"
 
 const wallet = WalletUtil.fromSeededPassphrase("my-passphrase", hexSeed)
-// wallet.signMessage(...)
+// wallet.signVocdoniMessage(...)
 
 // See ethers.js > Wallet
 ```

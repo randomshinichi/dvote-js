@@ -176,7 +176,7 @@ export class DVoteGateway implements IGatewayDVoteClient {
         })
 
         if (wallet) {
-            return JsonSignature.signMessage(requestBody, wallet)
+            return JsonSignature.signVocdoniMessage(requestBody, wallet)
                 .then((signature: string) => {
                     request.signature = signature
                     return request

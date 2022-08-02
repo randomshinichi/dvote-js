@@ -32,7 +32,7 @@ const Page = () => {
     }
     const jsonPayload = { value: TEXT_MESSAGE };
 
-    JsonSignature.signMessage(jsonPayload, signer)
+    JsonSignature.signVocdoniMessage(jsonPayload, signer)
       .then((signature) => {
         const recoveredPubKey = JsonSignature.recoverMessagePublicKey(
           jsonPayload,
@@ -45,7 +45,7 @@ const Page = () => {
           "\n\n" + status
         );
 
-        return BytesSignature.signMessage(BYTES_MESSAGE, signer);
+        return BytesSignature.signVocdoniMessage(BYTES_MESSAGE, signer);
       })
       .then((signature) => {
         const recoveredPubKey = BytesSignature.recoverMessagePublicKey(
@@ -69,7 +69,7 @@ const Page = () => {
       (status + "\n\nSigning with " + wallet.address).trim()
     );
 
-    JsonSignature.signMessage(jsonPayload, wallet)
+    JsonSignature.signVocdoniMessage(jsonPayload, wallet)
       .then((signature) => {
         const recoveredPubKey = JsonSignature.recoverMessagePublicKey(
           jsonPayload,
@@ -82,7 +82,7 @@ const Page = () => {
           "\n\n" + status
         );
 
-        return BytesSignature.signMessage(BYTES_MESSAGE, wallet);
+        return BytesSignature.signVocdoniMessage(BYTES_MESSAGE, wallet);
       })
       .then((signature) => {
         const recoveredPubKey = BytesSignature.recoverMessagePublicKey(

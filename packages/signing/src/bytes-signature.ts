@@ -10,7 +10,7 @@ export namespace BytesSignature {
      * @param messageBytes
      * @param walletOrSigner
      */
-    export function signMessage(messageBytes: Uint8Array, walletOrSigner: Wallet | Signer): Promise<string> {
+    export function signVocdoniMessage(messageBytes: Uint8Array, walletOrSigner: Wallet | Signer): Promise<string> {
         if (!walletOrSigner) throw new Error("Invalid wallet/signer")
         const digestedRequest = digestVocdoniMessage(messageBytes)
 

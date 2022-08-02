@@ -28,7 +28,7 @@ const bodyBytes = new TextEncoder().encode(message);
 
 // Signing messages
 
-const msgSignature = await BytesSignature.signMessage(bodyBytes, wallet);
+const msgSignature = await BytesSignature.signVocdoniMessage(bodyBytes, wallet);
 // returns '0x578ef5489a30afafc89ea1e39154140e73b9cf9d23da11e1eeb9358cd1c862382027e46da51c686ddcde3b0e6f13d82b418c691a1267b285f24f99e0669b23951b'
 
 BytesSignature.isValidMessage(bodyBytes, msgSignature, wallet.publicKey);
@@ -77,7 +77,7 @@ const jsonBody = { a: 1, b: "hi", c: false, d: [1, 2, 3, 4, 5, 6] };
 
 // Signing messages
 
-const msgSignature = await JsonSignature.signMessage(jsonBody, wallet);
+const msgSignature = await JsonSignature.signVocdoniMessage(jsonBody, wallet);
 // returns '0x40cd233894286b078667361b636e7e961072af579228ef8af3691cd5cdd1e5177984ceb65028a9fa8b0b8230c095cbe1b9dd244d5dee4febba67e01b34242fd41c'
 
 JsonSignature.isValidMessage(jsonBody, msgSignature, wallet.publicKey);

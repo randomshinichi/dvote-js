@@ -107,7 +107,7 @@ export class Account {
         }
         // for signing FaucetPayload, we don't want 'Vocdoni signed message' as
         // a prefix. We just want to sign the raw serialized FaucetPayload. Thus
-        // we must use signRaw, not BytesSignature.signMessage.
+        // we must use signRaw, not BytesSignature.signVocdoniMessage.
         const pSigned = await signRaw(FaucetPayload.encode(payload).finish(), this.wallet)
         const fPackage: FaucetPackage = {
             payload: payload,

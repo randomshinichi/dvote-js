@@ -11,7 +11,7 @@
 ## 1.16.0
 
 - `sortJson` is now exported as `JsonSignature.sort`
-- `JsonSignature` and `BytesSignature` now have `signMessage`, `signTransaction`, `isValidMessage`, `isValidTransaction`, `recoverMessagePublicKey` and `recoverTransactionPublicKey`
+- `JsonSignature` and `BytesSignature` now have `signVocdoniMessage`, `signTransaction`, `isValidMessage`, `isValidTransaction`, `recoverMessagePublicKey` and `recoverTransactionPublicKey`
 - Breaking:
   - `sign`, `isValid` and `recoverPublicKey` no longer exist on `JsonSignature` or `BytesSignature`
   - The signature of `isValidMessage`/`isValidTransaction` is now consistent with `recoverMessagePublicKey`/`recoverTransactionPublicKey`

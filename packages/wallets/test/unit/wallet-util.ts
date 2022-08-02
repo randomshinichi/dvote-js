@@ -107,7 +107,7 @@ describe("WalletUtil", () => {
 
         const jsonBody = { "method": "getVisibility", "timestamp": 1582196988554 }
 
-        const signature = await JsonSignature.signMessage(jsonBody, wallet)
+        const signature = await JsonSignature.signVocdoniMessage(jsonBody, wallet)
 
         expect(JsonSignature.isValidMessage(jsonBody, signature, computePublicKey(wallet.publicKey, true))).to.be.true
         expect(JsonSignature.isValidMessage(jsonBody, signature, wallet.publicKey)).to.be.true
